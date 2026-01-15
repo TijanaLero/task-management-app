@@ -1,53 +1,105 @@
 # Task Management App
 
-Ovaj projekat je veb aplikacija za upravljanje zadacima, razvijena kao Single Page Application (SPA). Omogućava korisnicima organizaciju obaveza kroz liste i kategorije uz potpunu kontrolu nad statusima i prioritetima.
+This project is a **Task Management web application** developed as a **Single Page Application (SPA)**.  
+It allows users to efficiently organize their tasks using lists and categories, with full control over task statuses and priorities.
 
-## Opis funkcionalnosti
+---
 
-Aplikacija nudi sledeće ključne funkcionalnosti:
+## Features
 
-- Upravljanje korisnicima: Registracija, prijava i bezbedna autentifikacija putem tokena.
-- Organizacija: Kreiranje personalizovanih listi zadataka i kategorija.
-- Upravljanje zadacima: Kompletan CRUD (kreiranje, prikaz, izmena i brisanje) zadataka.
-- Automatizacija: SQL Triger koji automatski beleži svaku promenu statusa zadatka u posebnu tabelu za logove (audit log).
-- Pretraga i filtriranje: Dinamička pretraga zadataka i filtriranje po statusu, prioritetu ili kategoriji.
-- Dashboard: Prikaz statistike i zadataka kojima uskoro ističe rok.
+The application provides the following core functionalities:
 
-## Tehnologije
+- **User Management**
+  - User registration and login
+  - Secure token-based authentication
 
-- Backend: Laravel 11 (PHP)
-- Frontend: React.js
-- Baza podataka: MySQL
-- Autentifikacija: Laravel Sanctum
+- **Organization**
+  - Creation and management of personalized task lists
+  - Task categorization for better organization
 
-## Implementirani REST principi
+- **Task Management**
+  - Full CRUD operations (Create, Read, Update, Delete) for tasks
+  - Task attributes include status, priority, deadline, and estimated time
 
-Projekat prati RESTful principe kroz:
-- Korišćenje odgovarajućih HTTP metoda: GET, POST, PUT, DELETE.
-- Ugnježdene rute za resurse:
-    - /api/v1/task-lists/{id}/tasks (Zadaci unutar liste)
-    - /api/v1/task-categories/{id}/tasks (Zadaci unutar kategorije)
-- Stateless arhitekturu bez korišćenja sesija na serverskoj strani.
+- **Automation**
+  - SQL trigger that automatically logs every task status change into a separate audit log table
 
-## Bezbednost
+- **Search & Filtering**
+  - Dynamic task search
+  - Filtering by status, priority, and category
 
-Aplikacija implementira zaštitu od čestih napada:
-- IDOR zaštita: Svaki upit u bazi proverava vlasništvo nad resursom koristeći Auth::id().
-- SQL Injection: Korišćenje Eloquent ORM-a i pripremljenih upita (prepared statements).
-- Mass Assignment: Zaštita modela kroz definisane $fillable nizove.
+- **Dashboard**
+  - Overview of tasks
+  - Display of tasks with upcoming deadlines and basic statistics
 
-## Instalacija i pokretanje
+---
 
+## Technologies Used
 
-### Backend
-1. Kloniranje repozitorijum sa GitHub-a:
-   git clone [https://github.com/elab-development/internet-tehnologije-2024-projekat-taskmanagementapp_2021_0010](https://github.com/elab-development/internet-tehnologije-2024-projekat-taskmanagementapp_2021_0010)
-2.Podesavanje env-a
-3.Instaliranje php zavisnosti: composer install
-4.Pokretanje migracija: php artisan migrate
+- **Backend:** Laravel 11 (PHP)
+- **Frontend:** React.js
+- **Database:** MySQL
+- **Authentication:** Laravel Sanctum
+- **API Architecture:** RESTful API
 
-### Frontend
-1. Uđite u folder frontend: cd frontend
-2. Instalirajte pakete: npm install
-3. Pokrenite aplikaciju: npm start
+---
 
+## RESTful API Principles
+
+The project follows REST principles through:
+
+- Proper use of HTTP methods: `GET`, `POST`, `PUT`, `DELETE`
+- Nested resource routes:
+  - `/api/v1/task-lists/{id}/tasks`
+  - `/api/v1/task-categories/{id}/tasks`
+- Stateless architecture without server-side sessions
+
+---
+
+## Security Measures
+
+The application includes protection against common vulnerabilities:
+
+- **IDOR Protection**
+  - Resource ownership is verified using `Auth::id()`
+
+- **SQL Injection Prevention**
+  - Use of Laravel Eloquent ORM and prepared statements
+
+- **Mass Assignment Protection**
+  - Explicit `$fillable` definitions in models
+
+---
+
+## Installation & Setup
+
+### Backend (Laravel)
+
+1. Clone the repository:
+      ```bash
+   git clone https://github.com/TijanaLero/task-management-app
+2. Configure the environment file:
+- Copy .env.example to .env
+- Set database credentials
+3. Install PHP dependencies:
+  composer install
+4. Run database migrations:
+  php artisan migrate
+5. Start the backend server:
+  php artisan serve
+
+### Frontend (React)  
+
+1. Navigate to the frontend directory:
+cd frontend
+2. Install dependencies:
+npm install
+3. Run the application:
+npm start
+
+---
+
+##Notes
+The frontend communicates with the backend via a REST API.
+Authentication is handled using Bearer tokens.
+This project was developed for educational purposes as part of a university course.
