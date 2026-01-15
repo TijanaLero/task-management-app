@@ -77,7 +77,7 @@ The application includes protection against common vulnerabilities:
 
 1. Clone the repository:
       ```bash
-   git clone [https://github.com/TijanaLero/task-management-app](https://github.com/TijanaLero/task-management-app.git)
+   git clone https://github.com/TijanaLero/task-management-app.git
 2. Configure the environment file:
 - Copy .env.example to .env
 - Set database credentials
