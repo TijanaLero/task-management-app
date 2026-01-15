@@ -77,7 +77,7 @@ The application includes protection against common vulnerabilities:
 
 1. Clone the repository:
       ```bash
-   git clone https://github.com/TijanaLero/task-management-app
+   git clone [https://github.com/TijanaLero/task-management-app](https://github.com/TijanaLero/task-management-app.git)
 2. Configure the environment file:
 - Copy .env.example to .env
 - Set database credentials
@@ -100,6 +100,6 @@ npm start
 ---
 
 ##Notes
-The frontend communicates with the backend via a REST API.
-Authentication is handled using Bearer tokens.
-This project was developed for educational purposes as part of a university course.
+- The frontend communicates with the backend via a REST API.
+- Authentication is handled using Bearer tokens.
+- This project was developed for educational purposes as part of a university course.
