@@ -99,7 +99,7 @@ npm start
 
 ---
 
-##Notes
+### Notes
 - The frontend communicates with the backend via a REST API.
 - Authentication is handled using Bearer tokens.
 - This project was developed for educational purposes as part of a university course.
